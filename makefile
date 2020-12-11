@@ -1,12 +1,14 @@
-output: TimedSorter.o Sorter.o
-	g++ TimedSorter.o Sorter.o -o output
+output: BSTree.o BSTreeNode.o ForTheLoveOfGodWork-Please.o
+	g++ BSTree.o BSTreeNode.o ForTheLoveOfGodWork-Please.o -o output
 
-ForTheLoveOfGod-Please.o: Sorter.cpp
-	g++ -c Sorter.cpp
+ForTheLoveOfGod-Please.o: ForTheLoveOfGodWork-Please.cpp
+	g++ -c ForTheLoveOfGodWork-Please.cpp
 
-BSTree.o: TimedSorter.cpp
-	g++ -c TimedSorter.cpp
+BSTree.o: BSTree.cpp BSTree.hpp IBSTree.h
+	g++ -c BSTree.cpp
+
+BSTreeNode.o: BSTreeNode.cpp BSTreeNode.hpp
+	g++ -c BSTreeNode.cpp
 
 clean:
 	rm *.o output 
-	
